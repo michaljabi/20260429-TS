@@ -8,6 +8,8 @@
  * nie ingeruj w detale implementacji (kod powinien działać tak samo)
  * */
 
+import type { StringOrNumber } from "./util-types";
+
 function addTwoNumbers(a: number, b: number): number {
   return a + b;
 }
@@ -19,7 +21,7 @@ console.log("Wynik to", result);
 // zobacz: c101 żeby do tego podejść:
 
 // info will accept only a string or number!
-function info(something: number | string): string {
+function info(something: StringOrNumber): string {
   console.log("Wartość", something, "to", typeof something);
 
   // tak nie możemy - i o to chodzi, bo nie mamy pewności czy something to nie np. number !!!
@@ -40,7 +42,7 @@ function info(something: number | string): string {
 // }
 // union type - pomaga nam rozwiązać ten problem
 
-let myFigure: number | string = 1000;
+let myFigure: StringOrNumber = 1000;
 info(myFigure);
 
 myFigure = "100.8";
