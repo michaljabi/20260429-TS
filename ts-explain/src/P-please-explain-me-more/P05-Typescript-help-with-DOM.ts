@@ -1,6 +1,7 @@
 const $myHeading = document.querySelector(".my-heading");
  
-if($myHeading !== null) {
+// if($myHeading !== null) {
+if($myHeading) {
    $myHeading.textContent = "My number is ";
    console.log('?')
 }
