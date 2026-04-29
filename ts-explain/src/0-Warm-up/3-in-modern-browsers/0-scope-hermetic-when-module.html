@@ -11,12 +11,13 @@
     <script type="module">
       // skrypty można by było również importować:
       // import './script1.js';
-      // import { yourLuckyNumber } from './script2.js';
+      import { yourLuckyNumber, myHello } from "./script2.js";
 
-      let LUCKY_NUMBER = 7;
-      console.log("Finalnie wartość Lucky Number to ", LUCKY_NUMBER);
+      // let LUCKY_NUMBER = 7;
+      console.log("Finalnie wartość Lucky Number to ", yourLuckyNumber);
       const $myHeading = document.querySelector(".my-heading");
-      $myHeading.textContent = "My number is " + LUCKY_NUMBER;
+      $myHeading.textContent = "My number is " + yourLuckyNumber;
+      console.log(myHello);
 
       /**
        * Nowoczesne [evergreen] przeglądarki (tuż po 2015r.) obsługują tzw. ES6 modules

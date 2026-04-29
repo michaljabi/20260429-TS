@@ -8,7 +8,7 @@
  * nie ingeruj w detale implementacji (kod powinien działać tak samo)
  * */
 
-import type { StringOrNumber } from "./util-types";
+import { type StringOrNumber, x } from "./util-types";
 
 function addTwoNumbers(a: number, b: number): number {
   return a + b;
