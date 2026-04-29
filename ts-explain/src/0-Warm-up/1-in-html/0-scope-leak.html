@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Scope leak in JS</title>
+  </head>
+  <body>
+    <h1 class="my-heading"></h1>
+    <script src="script1.js"></script>
+    <script src="script2.js"></script>
+    <script>
+      console.log("Finalnie wartość Lucky Number to ", LUCKY_NUMBER);
+      const $myHeading = document.querySelector(".my-heading");
+      $myHeading.textContent = "My number is " + LUCKY_NUMBER;
+    </script>
+  </body>
+</html>

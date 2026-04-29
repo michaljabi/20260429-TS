@@ -1,0 +1,6 @@
+### See the counter
+GET http://localhost:8099/
+
+
+### Reset the counter
+PUT http://localhost:8099/reset-visitors

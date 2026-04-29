@@ -1,0 +1,23 @@
+### Get all cars
+GET http://localhost:3000/cars
+
+### Get all cars by brand (Tesla)
+GET http://localhost:3000/cars?brand=Tesla
+
+### Get car by UID (qR1sT2)
+GET http://localhost:3000/cars/qR1sT2
+
+### Get car by non-existent UID
+GET http://localhost:3000/cars/nonExistentUid
+
+### Create new car
+POST http://localhost:3000/cars
+Content-Type: application/json
+
+{
+  "brand": "Polestar",
+  "model": "2",
+  "year": 2024,
+  "fuelType": "electric",
+  "color": "Midnight Blue"
+}

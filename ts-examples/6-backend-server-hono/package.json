@@ -1,0 +1,23 @@
+{
+  "name": "6-backend-server-hono",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch ./src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "check": "biome check ./src --reporter=summary",
+    "check:fix": "npm run check -- --fix",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.19.10",
+    "hono": "^4.12.5"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.4.5",
+    "@types/node": "^24.1.0",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.18"
+  }
+}

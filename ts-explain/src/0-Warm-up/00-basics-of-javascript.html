@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Prosty przykład z JS</title>
+    <style>
+      body {
+        font-family: monospace;
+        display: flex;
+        height: 100vh;
+        overflow: hidden;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1></h1>
+    <script>
+      const hello = "Witaj";
+      const world = "Świecie";
+      const $h1 = document.querySelector("h1");
+
+      $h1.innerText = hello;
+
+      setTimeout(() => {
+        $h1.innerText = world;
+      }, 2000);
+
+      console.log("Can you see me?");
+    </script>
+  </body>
+</html>

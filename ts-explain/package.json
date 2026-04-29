@@ -1,0 +1,32 @@
+{
+  "name": "ts-explain",
+  "version": "2.0.0",
+  "scripts": {
+    "watch": "tsc --watch",
+    "build": "tsc",
+    "init": "tsc --init",
+    "bundle": "esbuild src/0-Warm-up/2-in-node/esm/02-scope-hermetic-in-module.mjs --bundle --platform=node --outfile=dist/bundle.js",
+    "explain:dist": "node dist/exercises/00-explain.js",
+    "explain": "nodemon src/exercises/00-explain.ts",
+    "explain-alt": "tsx watch src/exercises/00-explain.ts",
+    "e0": "nodemon src/exercises/00-warm-up.ts",
+    "e1": "nodemon src/exercises/01-any-should-work.ts",
+    "e2": "nodemon src/exercises/02-train-basics.ts",
+    "e3": "nodemon src/exercises/03-functions.ts",
+    "e4": "nodemon src/exercises/04-callbacks.ts",
+    "e5": "nodemon src/exercises/05-shape-of-data.ts",
+    "e6": "nodemon src/exercises/06-better-joiner.ts",
+    "e7": "nodemon src/exercises/07-oop-style-joiner.ts",
+    "e8": "nodemon src/exercises/08-generic-basket.ts",
+    "e10": "nodemon src/exercises/1x-more/10-migrate-me-to-ts.js",
+    "e11": "nodemon src/exercises/1x-more/11-ShowUserSubscription.tsx --ext=tsx"
+  },
+  "author": "Jabi",
+  "devDependencies": {
+    "esbuild": "0.28.0",
+    "nodemon": "3.1.14",
+    "ts-node": "10.9.2",
+    "tsx": "^4.21.0",
+    "typescript": "6.0.3"
+  }
+}

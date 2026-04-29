@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Scope Hermetic when use type=module in JS</title>
+  </head>
+  <body>
+    <h1 class="my-heading"></h1>
+    <script type="module" src="script1.js"></script>
+    <script type="module" src="script2.js"></script>
+    <script type="module">
+      // skrypty można by było również importować:
+      // import './script1.js';
+      // import { yourLuckyNumber } from './script2.js';
+
+      let LUCKY_NUMBER = 7;
+      console.log("Finalnie wartość Lucky Number to ", LUCKY_NUMBER);
+      const $myHeading = document.querySelector(".my-heading");
+      $myHeading.textContent = "My number is " + LUCKY_NUMBER;
+
+      /**
+       * Nowoczesne [evergreen] przeglądarki (tuż po 2015r.) obsługują tzw. ES6 modules
+       *
+       * Koncepcja ta hermetyzuje SCOPE dla danego pliku — modułu. Zachowuje się to dokładnie tak jak CommonJS (z Node.js).
+       * Różnicą jest tylko sposób zapisu ze składnią import — export.
+       * */
+    </script>
+  </body>
+</html>
