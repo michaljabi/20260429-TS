@@ -1,4 +1,3 @@
-// @ts-nocheck
 // Komentarz powyżej wskazuje kompilerowi typescript — że ma nie analizować tego pliku...
 /**
  * Zadanie 0:
@@ -17,32 +16,38 @@
  * // @ts-ignore
  * */
 
-const MyHello = 'Hello';
-console.log(MyHello, 'World')
+// Coding standards:
 
-MyHello = 'Serious';
-const help = "HelpMe out!"
+// PascalCase - nazwy class
+// camelCase - nazwy zmiennych, stałych, parametrów, property
+// kebab-case - nazwy wartości w css etc. (nielegalne w JS)
+// SNAKE_CASE - jakaś Globalna stała (podkreślenie że używana w całym projekcie np.)
 
-let do = true;
-const LARGE-number = 2048
+let myHello = "Hello";
+console.log(myHello, "World");
 
-tutaj miał być komentarz, że addNumbers musi zwracać number !
-function addNumbers(a , b): number {
-    return a + b
+myHello = "Serious";
+const help = "HelpMe out!";
+
+let doneFlag = true;
+const LARGE_NUMBER = 2048;
+
+// tutaj miał być komentarz, że addNumbers musi zwracać number !
+function addNumbers(a: number, b: number): number {
+  return a + b;
 }
 
-let result: string;
-result = addNumbers(10, 20);
+// let result: number;
+const result = addNumbers(10, 20);
 
-console.log('Result is:', result);
+console.log("Result is:", result + 90);
 
-console.log(helloStranger())
+const helloStranger = (): string => "Hello Stranger !";
 
-const helloStranger = (): string => 'Hello Stranger !';
+console.log(helloStranger());
 
-function randomNumber(): string {
-    return Math.random() * 100;
+function randomNumber(): number {
+  return Math.random() * 100;
 }
 
-console.log('You reached the end! - BRAVO')
-
+console.log("You reached the end! - BRAVO");
