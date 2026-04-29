@@ -8,21 +8,39 @@
  * nie ingeruj w detale implementacji (kod powinien działać tak samo)
  * */
 
-function addTwoNumbers(a: any, b: any): any {
+function addTwoNumbers(a: number, b: number): number {
   return a + b;
 }
 
-const result: any = addTwoNumbers(10, 20);
+const result = addTwoNumbers(10, 20);
 
 console.log("Wynik to", result);
 
+// zobacz: c101 żeby do tego podejść:
+
 // info will accept only a string or number!
-function info(something: any): any {
+function info(something: number | string): string {
   console.log("Wartość", something, "to", typeof something);
+
+  // tak nie możemy - i o to chodzi, bo nie mamy pewności czy something to nie np. number !!!
+  //something.charAt(0);
+  if (typeof something === "string") {
+    something.charAt(0);
+  } else {
+    something.toFixed();
+  }
+
   return typeof something;
 }
 
-let myFigure: any = 1000;
+// NIEMOŻLIWE W JS (nie ma "przeładowywania", funkcji a w klasach: metod, konstuktorów)
+// function info(something: string): string {
+//   console.log("Wartość", something, "to", typeof something);
+//   return typeof something;
+// }
+// union type - pomaga nam rozwiązać ten problem
+
+let myFigure: number | string = 1000;
 info(myFigure);
 
 myFigure = "100.8";
