@@ -11,14 +11,14 @@
  * - utwórz odpowiednie obiekty i przekaż do `giveFullName` tak aby potwierdzić poprawność działania kodu
  * */
 
-function joiner(strTuple: any): any {
+function joiner(strTuple: string[]): string {
   return strTuple[0] + " " + strTuple[1];
 }
 
-function giveFullName(myUser: any): any {
-  const fullName: any = myUser.name + " " + myUser.lastName;
-  let prefix: any;
-  let suffix: any;
+function giveFullName(myUser: {name: string, lastName: string, sex: string, vipStatus?: boolean}): string {
+  const fullName = myUser.name + " " + myUser.lastName;
+  let prefix = '';
+  let suffix = '';
   if (myUser.sex === "female") {
     prefix = "Pani";
   } else if (myUser.sex === "male") {
@@ -29,3 +29,6 @@ function giveFullName(myUser: any): any {
   }
   return prefix + " " + fullName + suffix;
 }
+
+// rozwiązane, ale celowa literówka
+giveFullName({name: 'Michał', lastName: 'Kowalsky', sex: 'malez'})
