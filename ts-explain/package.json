@@ -20,12 +20,14 @@
     "e8": "nodemon src/exercises/08-oop-style-joiner.ts",
     "e9": "nodemon src/exercises/09-generic-basket.ts",
     "e10": "nodemon src/exercises/1x-more/10-migrate-me-to-ts.js",
-    "e11": "nodemon src/exercises/1x-more/11-ShowUserSubscription.tsx --ext=tsx"
+    "e11": "nodemon src/exercises/1x-more/11-ShowUserSubscription.tsx --ext=tsx",
+    "format": "prettier ./src --write"
   },
   "author": "Jabi",
   "devDependencies": {
     "esbuild": "0.28.0",
     "nodemon": "3.1.14",
+    "prettier": "^3.8.3",
     "ts-node": "10.9.2",
     "tsx": "^4.21.0",
     "typescript": "6.0.3"
