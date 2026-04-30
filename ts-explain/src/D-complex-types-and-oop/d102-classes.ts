@@ -38,7 +38,32 @@ class Example {
   protected accessibleForInheritanceOnly = true;
   public visibleAndAccessibleForAnyone = "access to all !";
   visibleAndAccessibleForAnyoneByDefault = "access to all !";
+
+  // prawdziwie prywatne pole w JS/TS:
+  #truePrivate = "hello";
+
+  hello() {
+    console.log("Witaj", this.#truePrivate);
+  }
 }
+
+const myInstance = new Example();
+//myInstance.hello();
+console.log(myInstance.visibleAndAccessibleForAnyone);
+console.log(myInstance.visibleAndAccessibleForAnyoneByDefault);
+
+const myInstance2 = new Example();
+const myInstance3 = new Example();
+const myInstance4 = new Example();
+const myInstance5 = new Example();
+
+//@ts-expect-error
+console.log(myInstance.notAccessibleOutsideAClass);
+//@ts-expect-error
+console.log(myInstance.accessibleForInheritanceOnly);
+//@ts-expect-error
+console.log(myInstance.truePrivate);
+// console.log(myInstance.#truePrivate);
 
 // Możemy również określić pola jako tylko do odczytu:
 // oraz nadać klasie konstruktor,
@@ -85,6 +110,7 @@ ricky.name = "Ricky";
 
 class Person {
   name = "Unknow";
+  #age = 30;
 
   sayYourName() {
     console.log(this.name);
