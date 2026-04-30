@@ -113,7 +113,7 @@ iReallyDoNotKnow = 23;
 // [!] Przypisanie unknown do number — nie będzie możliwe.
 // ZASADNICZA RÓŻNICA między any a unknown:
 // (odkomentuj) Poniższa linia generuje błąd:
-// const myNumber: number = iReallyDoNotKnow;
+const myNumber: number = iReallyDoNotKnow;
 
 // Dlatego unknown jest nazywany "type-safe" - musimy upewnić się, jakiego dokładnie typu jest `unknown`
 // Dopiero wtedy TS pozwoli nam go przypisać do np. number:

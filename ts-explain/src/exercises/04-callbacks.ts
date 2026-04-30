@@ -33,12 +33,42 @@ type CallbackTaxFn = (tax: number) => void;
 
 // function getVatTaxRateFromServer(calculations: CallbackTaxFn) {
 // PROVIDER:
-function getVatTaxRateFromServer(calculations: (tax: number) => void) {
+function getVatTaxRateFromServer(calculations?: (tax: number) => void) {
   console.log(calculations);
+  console.log(!calculations);
+  if (!calculations) {
+    throw new Error("Calculations must be a function");
+  }
   calculations(0.23);
   setTimeout(() => {
+    if (!calculations) {
+      // Jeśli zrobimy tak to try - catch nie zadziała dla tego kodu asynchronicznego.
+      // rozwiązaniem będą Promise!
+      // problemem jest tutaj asynchroniczność.
+      throw new Error("Calculations must be a function");
+    }
     calculations(0.24);
   }, 3000);
+}
+
+try {
+  getVatTaxRateFromServer();
+  console.log("Wykonam się jeśli wszystko ok...");
+} catch (e: unknown) {
+  // instanceof guard
+  // https://www.typescriptlang.org/docs/handbook/2/narrowing.html#instanceof-narrowing
+  if (e instanceof ReferenceError) {
+    console.log("Coś jest źle w kodzie...");
+    console.log(e.name);
+    console.log(e.message);
+  } else if (e instanceof Error) {
+    console.log(e.name);
+    console.log(e.message);
+  } else if (typeof e === "string") {
+    console.log(e);
+  } else {
+    console.log("Aaaa... coś poszło nie tak...");
+  }
 }
 
 // przykład Callback:
