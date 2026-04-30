@@ -21,8 +21,15 @@ const numbersOrStrings2: (string | number)[] = [];
 const numbersOrStrings3: Array<string | number> = [];
 const strings = [""];
 
-function joiner(strTuple: [string, string]): string {
-  return strTuple[0] + " " + strTuple[1];
+// function joiner(strTuple: [string, string]): string {
+//   return strTuple[0] + " " + strTuple[1];
+// }
+// Nowoczesny JS/TS: tzw. destructuring
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring
+// destrukturyzacje array mogę zrobić od razu w parameter!
+function joiner([first, second]: [string, string]): string {
+  // const [first, second] = strTuple;
+  return `${first} ${second}`;
 }
 
 const realTuple: [string] = ["?"];
@@ -53,7 +60,7 @@ type AgedPerson = Person & { age: number };
 const myPerson: AgedPerson = { name: '', lastName: '', sex: 'female', age: 19 };
 
 function giveFullName(myUser: Person2): string {
-  const fullName = myUser.name + " " + myUser.lastName;
+  const fullName = `${myUser.name} ${myUser.lastName}`;
   let prefix = "";
   let suffix = "";
   if (myUser.sex === "female") {
@@ -65,7 +72,7 @@ function giveFullName(myUser: Person2): string {
     suffix = " - the VIP";
   }
   // return (prefix + " " + fullName + suffix).trim();
-  return joiner([prefix, joiner([fullName, suffix])]);
+  return joiner([prefix, joiner([fullName, suffix])]).trim();
 }
 
 // rozwiązane, ale celowa literówka
