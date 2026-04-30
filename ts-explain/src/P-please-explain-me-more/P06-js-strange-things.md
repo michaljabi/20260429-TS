@@ -16,3 +16,4 @@
 1. `TypeScript` nie ma nic do runtime JS!
 2. Potrzebujemy platformy (ekosystemu JS) żeby korzystać z `typescript`, np. _NodeJs_ (inne to: _Deno_, _Bun_)
 3. `JavaScript` to język Obiektowy i Funkcyjny (2 paradygmaty - podobnie jak w _Python_) [Functions First Class Citizens]. Funkcja to tak naprawdę Obiekt specjalnego przeznaczenia (można go wywołać). 
+4. Słowa kluczowe `async` / `await` służą do tworzenia i odbierania `Promise` natywnych. To jest tzw. lukier składniowy.
