@@ -51,6 +51,8 @@ freestyleSet.add("hello");
 freestyleSet.add("hello");
 freestyleSet.add(true);
 
+console.log(freestyleSet)
+
 // Wtedy nie możemy zawęzić zakresu danych akceptowanych przez Set.
 // pozbyliśmy sie podpowiadania typów
 // Nasz `mySampleSet` na przykład - nie może przyjąć wartości innego typu niż `number`
@@ -59,7 +61,7 @@ freestyleSet.add(true);
 
 // Całe piękno typów generycznych, polega na możliwości tworzenia własnych.
 // Możemy przykładowo - utworzyć funkcję, która nie wie jeszcze jaki dokładnie typ będzie logować na konsoli
-function logItOut<ITER>(something: ITER) {
+function logItOut<R>(something: R) {
   console.log(something);
 }
 
@@ -86,6 +88,14 @@ logItOut<number>(12012);
 function wrapInArray<T>(first: T, second: T): T[] {
   return [first, second];
 }
+
+// nieprawidłowe wywołania
+// @ts-expect-error
+wrapInArray(1, 'a');
+// @ts-expect-error
+wrapInArray('a', 2);
+
+wrapInArray('a', '2');
 
 // UWAGA: Typescript orientuje się, że wrapInArray jest generyczne, ponieważ jego zapis to: wrapInArray<>
 //        to właśnie te ostre nawiasy z dowolnym tekstem w środku <STH> definiują, że pod STH zostanie potem podstawiony typ.
