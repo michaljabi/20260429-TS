@@ -83,7 +83,7 @@ console.log(myMovie.name);
 // myMovie.name = 'The Gathering';
 
 // Konstruktor w klasie może być tylko jeden.
-// TypeScript oferuje nam pewien idom, aby możliwy był zapis tego powyżej w skróconej formie
+// TypeScript oferuje nam pewien idiom, aby możliwy był zapis tego powyżej w skróconej formie
 // Wystarczy przenieść modyfikatory pól (public readonly) do parametru konstuktora
 
 // Movie [===] OtherMovie

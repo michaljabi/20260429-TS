@@ -18,11 +18,17 @@
 
 class Joiner {
 
+    /* zamiast całego tego:
+    
     private sign: string;
 
     constructor(sign: string) {
         this.sign = sign
     }
+    
+    można "lukier składniowy z TS"
+    */
+    constructor(private sign: string) {}
 
     changeSign(newSign: string): void {
         this.sign = newSign
