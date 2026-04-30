@@ -18,6 +18,44 @@
  * - napisz taki właśnie przypadek i obsłuż go w try - catch
  * */
 
-function getVatTaxRateFromServer(calculations: any) {
+// jeśli zapiszesz Arrow function jako one-liner to nie musisz nawet pisac return
+const arrowNumber = () => 800;
+console.log(arrowNumber());
+
+const arrowMultiline = () => {
+  const a = 10;
+  return a * 5;
+};
+console.log(arrowMultiline());
+
+// Typescript types
+type CallbackTaxFn = (tax: number) => void;
+
+// function getVatTaxRateFromServer(calculations: CallbackTaxFn) {
+// PROVIDER:
+function getVatTaxRateFromServer(calculations: (tax: number) => void) {
+  console.log(calculations);
   calculations(0.23);
+  setTimeout(() => {
+    calculations(0.24);
+  }, 3000);
 }
+
+// przykład Callback:
+// https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
+
+//developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
+// CALLBACK CONSUMER
+getVatTaxRateFromServer((vatRate: number) => {
+  console.log(300 + 300 * vatRate);
+});
+
+// CALLBACK CONSUMER #2
+// getVatTaxRateFromServer((vatRate: number) => {
+//   console.log(300 + 300 * vatRate);
+// })
+
+// CALLBACK CONSUMER #3
+// getVatTaxRateFromServer((vatRate: number) => {
+//   console.log(300 + 300 * vatRate);
+// })
