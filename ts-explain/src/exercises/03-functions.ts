@@ -39,7 +39,7 @@ const JOB_TITLE = "Senior Specialist";
 const SOCIAL_PACKET = "Grand premium Sport Card";
 
 
-function userOnboarding(name: string, yearOfExperience: null | number, jobTitle = 'Senior Specialist', socialPacket = 'Grand premium Sport Card') {
+function userOnboarding(name: string, yearOfExperience: null | number, jobTitle = JOB_TITLE, socialPacket = SOCIAL_PACKET) {
 //   console.log(name);
 //   console.log(yearOfExperience);
 //   console.log(jobTitle);
