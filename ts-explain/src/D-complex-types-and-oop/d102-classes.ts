@@ -71,9 +71,10 @@ console.log(myInstance.truePrivate);
 // jednak później nie możemy jej zmienić!
 class Movie {
   readonly name: string;
-  constructor(name: string) {
+  constructor(name: string, lastName?: string) {
     this.name = name;
   }
+
 }
 
 const myMovie = new Movie("The Witcher");
